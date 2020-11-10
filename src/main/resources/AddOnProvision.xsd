@@ -1,0 +1,35 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tcs.ms.soapservices/addonprovision"
+           targetNamespace="http://tcs.ms.soapservices/addonprovision" elementFormDefault="qualified">
+
+    <xs:element name="AddOnProvisionRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="1" name="transactionId" type="xs:string"/>
+                <xs:element minOccurs="1" name="msisdn" type="xs:string"/>
+                <xs:element minOccurs="1" name="offeringId" type="xs:string"/>
+                <xs:element minOccurs="1" name="action" type="xs:string"/>
+                <xs:element minOccurs="1" name="source" type="xs:string"/>
+                <xs:element minOccurs="0" name="adjustmentCode" type="xs:string"/>
+                <xs:element minOccurs="0" name="startDate" type="xs:string"/>
+                <xs:element minOccurs="0" name="endDate" type="xs:string"/>
+                <xs:element minOccurs="1" name="price" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="AddOnProvisionResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="1" minOccurs="0" name="header" type="tns:header"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+        
+    <xs:complexType name="header">
+    	<xs:sequence>
+    		<xs:element maxOccurs="1" minOccurs="1" name="resultCode" type="xs:string"/>
+    		<xs:element maxOccurs="1" minOccurs="1" name="resultDescription" type="xs:string"/>    	
+    	</xs:sequence>
+    </xs:complexType>
+    
+</xs:schema>
